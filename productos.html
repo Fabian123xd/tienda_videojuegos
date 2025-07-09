@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - Zona Gamer</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <video autoplay muted loop playsinline id="video-fondo">
+    <source src="videos/Mario - Live Wallpaper.mp4" type="video/mp4" />
+    Tu navegador no soporta el video de fondo.
+     </video>
+  <header class="header">
+    <h1 class="logo"><i class="fa-solid fa-gamepad"></i> Catálogo de Videojuegos</h1>
+    <p class="slogan">Explora nuestra colección</p>
+  </header>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="contactos.html">Contacto</a></li>
+    </ul>
+  </nav>
+<div class="dropdown-carrito">
+  <button id="btnCarrito">🛒 Carrito (<span id="cantidadCarrito">0</span>)</button>
+  <div id="dropdownCarrito" class="dropdown-carrito" style="display: none;"></div>
+</div>
+  <main class="contenedor">
+    <section>
+      <h2>Lista de Productos</h2>
+
+      <!-- Filtros -->
+      <div style="text-align: center; margin-bottom: 20px;">
+        <select id="filtroPlataforma">
+          <option value="">Filtrar por plataforma</option>
+          <option value="PS2">PS2</option>
+          <option value="PS3">PS3</option>
+          <option value="PS4">PS4</option>
+          <option value="PS5">PS5</option>
+          <option value="PC">PC</option>
+        </select>
+      </div>
+
+      <div id="productos" class="contenedor-productos"></div>
+
+      <!-- MODAL DE DETALLES Y RESEÑAS -->
+<div id="modalProducto" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar">&times;</span>
+    <h2 id="modalTitulo"></h2>
+    <p id="modalDescripcion"></p>
+
+    <hr>
+    <h3>⭐ Reseñas de usuarios</h3>
+    <div id="contenedorReseñas"></div>
+
+    <h4>Deja tu reseña:</h4>
+    <label for="estrellas">Calificación:</label>
+    <select id="estrellas">
+      <option value="1">1 ⭐</option>
+      <option value="2">2 ⭐⭐</option>
+      <option value="3">3 ⭐⭐⭐</option>
+      <option value="4">4 ⭐⭐⭐⭐</option>
+      <option value="5">5 ⭐⭐⭐⭐⭐</option>
+    </select>
+    <br>
+    <label for="comentario">Comentario:</label><br>
+    <textarea id="comentario" rows="3" cols="40" placeholder="Escribe aquí..."></textarea><br>
+    <button id="guardarReseña">Guardar reseña</button>
+  </div>
+</div>
+    </section>
+  </main>
+
+<footer class="footer">
+  <p>&copy; 2025 Zona Gamer - Todos los derechos reservados</p>
+  <div class="redes-sociales">
+    <a href="https://facebook.com" target="_blank" title="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" title="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://youtube.com" target="_blank" title="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </div>
+</footer>
+  <script src="js/modal.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
