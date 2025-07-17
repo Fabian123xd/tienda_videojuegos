@@ -1,0 +1,220 @@
+/* ========== HEADER MEJORADO PARA TIENDA DE VIDEOJUEGOS ========== */
+
+/* Header principal con gradiente y efectos */
+.header {
+  background: linear-gradient(135deg, 
+    rgba(0, 31, 63, 0.95) 0%, 
+    rgba(0, 51, 102, 0.95) 25%, 
+    rgba(0, 0, 0, 0.9) 50%, 
+    rgba(0, 51, 102, 0.95) 75%, 
+    rgba(0, 31, 63, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid #00ffc3;
+  box-shadow: 
+    0 4px 20px rgba(0, 255, 195, 0.3),
+    0 0 40px rgba(0, 255, 195, 0.1);
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de partículas animadas en el fondo del header */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 255, 195, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 255, 195, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(0, 255, 195, 0.1) 0%, transparent 50%);
+  animation: particleFloat 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Logo principal con efectos */
+.logo {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #00ffc3;
+  text-shadow: 
+    0 0 10px #00ffc3,
+    0 0 20px #00ffc3,
+    0 0 30px #00ffc3,
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+  0% { text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3, 0 0 30px #00ffc3, 2px 2px 4px rgba(0, 0, 0, 0.8); }
+  100% { text-shadow: 0 0 15px #00ffc3, 0 0 25px #00ffc3, 0 0 35px #00ffc3, 2px 2px 4px rgba(0, 0, 0, 0.8); }
+}
+
+/* Icono del gamepad con animación */
+.logo i {
+  margin-right: 15px;
+  animation: gamepadPulse 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes gamepadPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(5deg); }
+}
+
+/* Slogan mejorado */
+.slogan {
+  font-size: 1.4rem;
+  color: #ffffff;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+/* Navegación mejorada */
+nav {
+  background: linear-gradient(90deg, 
+    rgba(0, 0, 0, 0.9) 0%, 
+    rgba(0, 31, 63, 0.9) 50%, 
+    rgba(0, 0, 0, 0.9) 100%);
+  border-bottom: 2px solid #00ffc3;
+  box-shadow: 0 2px 15px rgba(0, 255, 195, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+  padding: 20px 15px;
+  margin: 0;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Efecto hover para los enlaces del menú */
+.menu a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 195, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.menu a:hover::before {
+  left: 100%;
+}
+
+.menu a:hover {
+  color: #00ffc3;
+  background: rgba(0, 255, 195, 0.1);
+  box-shadow: 
+    0 0 15px rgba(0, 255, 195, 0.5),
+    inset 0 0 15px rgba(0, 255, 195, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Indicador de página activa */
+.menu a.active {
+  background: rgba(0, 255, 195, 0.2);
+  color: #00ffc3;
+  box-shadow: 0 0 10px rgba(0, 255, 195, 0.3);
+}
+
+/* Responsive design para el header */
+@media (max-width: 768px) {
+  .header {
+    padding: 30px 15px;
+  }
+  
+  .logo {
+    font-size: 2.5rem;
+  }
+  
+  .slogan {
+    font-size: 1.1rem;
+  }
+  
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .menu a {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 2rem;
+  }
+  
+  .slogan {
+    font-size: 1rem;
+  }
+  
+  .menu {
+    gap: 5px;
+  }
+  
+  .menu a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Efectos adicionales para mejorar la experiencia */
+.header:hover .logo {
+  animation-duration: 1.5s;
+}
+
+.header:hover .logo i {
+  animation-duration: 1s;
+}
+
+/* Transición suave para cambios de página */
+.header, nav {
+  transition: all 0.3s ease;
+} 
